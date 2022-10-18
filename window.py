@@ -28,7 +28,7 @@ class MainWindow:
         # center = (300, 300)
         self.c.create_oval(50, 50, 550, 550, outline="white", width=20)
         self.c.create_oval(60, 60, 540, 540, fill="#000060")
-        self.c.create_arc(60, 60, 540, 540, fill="yellow", start=sunrise_angle, extent=day_extent)
+        self.c.create_arc(60, 60, 540, 540, fill="yellow", start=sunrise_angle+90, extent=day_extent)
 
         delineations = np.linspace(start=0, stop=np.pi*2, num=25)
         angles = list(delineations)
@@ -40,7 +40,6 @@ class MainWindow:
         # Draw clock hand
         lines = [[300, 310], [290, 300], [300, 70], [310, 300]]
         lines_rotated = []
-        print(hand_angle)
         for p in lines:
             p = np.add(p, [-300, -300])
             x = p[0] * np.cos(hand_angle) - p[1] * np.sin(hand_angle)
@@ -76,7 +75,6 @@ class MainWindow:
         # Create the menu and tie it to the location_chosen_event() callback
         self.location_chooser = OptionMenu(f, self.chosen_loc, *locations, command=lambda x: self.location_chosen_event())
         self.location_chooser.pack()
-
 
         # Main window loop - handles detection of user interaction
         self.w.mainloop()

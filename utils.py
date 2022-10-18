@@ -1,4 +1,5 @@
-from datetime import datetime, timedelta
+from datetime import timedelta, datetime
+import datetime as dt
 from config import settings, dynamic_vals
 import requests
 import json
@@ -59,7 +60,7 @@ def get_sunrise_sunset_times(coords, date='today', utc_offset=0):
 def time_to_angle(time_object):
     mins = (time_object.hour * 60) + time_object.minute + (time_object.second / 60)
     degrees_per_min = 4
-    angle = mins / degrees_per_min - 90
+    angle = mins / degrees_per_min + 180
     return angle
 
 

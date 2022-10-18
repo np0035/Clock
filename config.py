@@ -3,7 +3,7 @@ import datetime
 settings = {
     "locations": {"HUNTSVILLE_AL": [34.732611, -86.586232], "MERRIMACK_NH": [42.867057, -71.495412]},
     "time_zones": {"HUNTSVILLE_AL": -5.0, "MERRIMACK_NH": -4.0},
-    "current_loc": "MERRIMACK_NH",
+    "current_loc": "HUNTSVILLE_AL",
     "time_zone": -4.0,
     "date": "today",
 }
